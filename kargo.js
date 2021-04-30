@@ -1,5 +1,3 @@
-
-
 var numbers = process.argv.slice(2)
 console.log(numbers)
 
@@ -21,11 +19,9 @@ function numberToWord(num) {
     for (var i = 0; i < digs.length; i++) {
       output = output + num_strings[digs[i]]
     }
-    console.log(output)
   }
   else{
     output = num_strings[digs]
-    console.log(num_strings[digs])
   }
 
   return output
