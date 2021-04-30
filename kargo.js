@@ -1,4 +1,5 @@
 var numbers = process.argv.slice(2)
+console.log(numbers)
 
 function numberToWord(num) {
   num_strings = ["Zero", "One", "Two", "Three", "Four",
@@ -9,18 +10,21 @@ function numberToWord(num) {
   while (num > 9) {
     dig = num % 10
     digs.unshift(dig)
-    num = Math.round(num/10)
+    num = Math.round(num/10 - .5)
   }
 
   digs.unshift(num)
+  console.log(digs)
 
   if (digs.length > 1) {
     for (var i = 0; i < digs.length; i++) {
       output = output + num_strings[digs[i]]
     }
+    console.log(output)
   }
   else{
-    output = num_strings[digs]
+    output = output + num_strings[digs]
+    console.log(num_strings[digs])
   }
 
   return output
