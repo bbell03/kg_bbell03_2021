@@ -1,32 +1,39 @@
+//Brandon Bell
+//Kargo Internship Summer 2021 Pre Assessment
+//4.30.21
+
+//Accept Command Line Parameters
 var numbers = process.argv.slice(2)
 console.log(numbers)
 
+//Function to Convert a number entry to its equivalent string form
+//as specified
 function numberToWord(num) {
+  //possible return data
   num_strings = ["Zero", "One", "Two", "Three", "Four",
                 "Five", "Six", "Seven", "Eight", "Nine"]
+  //init working and return variables
   digs = []
   output = ''
-
+  //case for multi-digit inputs READ DATA
   while (num > 9) {
     dig = num % 10
     digs.unshift(dig)
     num = Math.round(num/10 - .5)
   }
-
+  //case for sigle-digit input or final-digit READ DATA
   digs.unshift(num)
-  console.log(digs)
-
+  //case for multi-digit conversion
   if (digs.length > 1) {
     for (var i = 0; i < digs.length; i++) {
       output = output + num_strings[digs[i]]
     }
-    console.log(output)
   }
+  //case for single-digit conversion
   else{
     output = output + num_strings[digs]
-    console.log(num_strings[digs])
   }
-
+  //return
   return output
 }
 
