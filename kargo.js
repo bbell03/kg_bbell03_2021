@@ -6,7 +6,6 @@
 
 //Accept Command Line Parameters
 var numbers = process.argv.slice(2)
-console.log(numbers)
 
 //Function to Convert a number entry to its equivalent string form
 //as specified
