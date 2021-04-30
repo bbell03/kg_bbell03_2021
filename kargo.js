@@ -1,6 +1,8 @@
 //Brandon Bell
 //Kargo Internship Summer 2021 Pre Assessment
 //4.30.21
+// The following program converts a list of numbers taken from standard input
+// and returns their representations as digit strings to standard output.
 
 //Accept Command Line Parameters
 var numbers = process.argv.slice(2)
@@ -38,16 +40,22 @@ function numberToWord(num) {
   return output
 }
 
+//init output string
 finalString = ''
 
+//call function on each number in input list
 for (var i = 0; i < numbers.length; i++) {
   word = numberToWord(numbers[i])
+
+  //output preceding elements with comma
   if (i < (numbers.length - 1)) {
     finalString = finalString +  word + ', '
   }
+  //output final elements with no comma
   else{
     finalString = finalString + word
   }
 }
 
+//output solution
 console.log(finalString)
