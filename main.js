@@ -48,7 +48,7 @@ for (var i = 0; i < numbers.length; i++) {
 
   //output preceding elements with comma
   if (i < (numbers.length - 1)) {
-    finalString = finalString +  word + ', '
+    finalString = finalString +  word + ','
   }
   //output final elements with no comma
   else{
