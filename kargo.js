@@ -19,6 +19,7 @@ function numberToWord(num) {
   while (num > 9) {
     dig = num % 10
     digs.unshift(dig)
+    //always round down to get digits as entered
     num = Math.round(num/10 - .5)
   }
   //case for sigle-digit input or final-digit READ DATA
