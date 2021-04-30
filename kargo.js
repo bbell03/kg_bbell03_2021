@@ -3,9 +3,8 @@
 var numbers = process.argv.slice(2)
 console.log(numbers)
 
-
 function numberToWord(num) {
-  numToLetter = ["Zero", "One", "Two", "Three", "Four",
+  num_strings = ["Zero", "One", "Two", "Three", "Four",
                 "Five", "Six", "Seven", "Eight", "Nine"]
   digs = []
   output = ''
@@ -20,16 +19,28 @@ function numberToWord(num) {
 
   if (digs.length > 1) {
     for (var i = 0; i < digs.length; i++) {
-      output = output + numToLetter[digs[i]]
+      output = output + num_strings[digs[i]]
     }
     console.log(output)
   }
   else{
-    console.log(numToLetter[digs])
+    output = num_strings[digs]
+    console.log(num_strings[digs])
   }
 
-  return
+  return output
 }
 
+finalString = ''
 
-numbers.forEach(numberToWord)
+for (var i = 0; i < numbers.length; i++) {
+  word = numberToWord(numbers[i])
+  if (i < (numbers.length - 1)) {
+    finalString = finalString +  word + ', '
+  }
+  else{
+    finalString = finalString + word
+  }
+}
+
+console.log(finalString)
